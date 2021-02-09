@@ -21,3 +21,13 @@ router.get("/api/workouts/range", (req, res) => {
       res.status(400).json(err);
     });
 });
+
+router.post("/api/workouts", (req, res) => {
+  Workout.create({})
+    .then((dbWorkout) => {
+      res.json(dbWorkout);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
+});
